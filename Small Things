@@ -1,0 +1,11 @@
+def combiner(listy):
+    stringy = ""
+    numbery = 0
+    for i in listy:
+        if isinstance(i,str):
+            stringy += str(i)
+        elif isinstance(i, (int, float)):
+            numbery += i
+        else:
+            continue
+        return stringy + str(numbery)
