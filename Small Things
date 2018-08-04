@@ -9,3 +9,52 @@ def combiner(listy):
         else:
             continue
         return stringy + str(numbery)
+       
+python -m doctest your_script.py
+
+
+import unittest
+
+from string_fun import is_palindrome
+
+
+class PalindromeTestCase(unittest.TestCase):
+    
+    def test_good_palindrome(self):
+        self.assertTrue(is_palindrome('tacocat'))
+      
+    def test_bad_palindrome(self):
+        self.assertFalse(is_palindrome())
+        pass
+
+def is_palindrome(yarn):
+    """Return whether or not a string is a palindrome.
+
+    A palindrome is a word/phrase that's the same in
+    both directions.
+    """
+    return yarn == yarn[::-1]
+
+import unittest
+
+from string_fun import get_anagrams
+
+
+class AnagramTests(unittest.TestCase):
+    def test_in_anagrams(self):
+        self.assertIn("house", get_anagrams('Treehouse'))
+        pass
+
+import unittest
+
+from string_fun import get_anagrams
+
+
+class AnagramTestCase(unittest.TestCase):
+    def test_empty_string(self):
+        with self.assertRaises(ValueError):
+          get_anagrams('')
+      
+    def test_no_args(self):
+        with self.assertRaises(ValueError):
+            get_anagrams()
